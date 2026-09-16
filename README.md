@@ -74,17 +74,36 @@ GEMINI_API_KEY=your_key_here
 BACKEND_URL=http://backend:8000
 ```
 
-### 3. Start the app with Docker
+### 3. Quick deploy with published Docker images
+
+You can pull and run the images directly from Docker Hub:
+
+- Frontend: https://hub.docker.com/r/anshikagpt27/youtube-chatbot-frontend
+- Backend: https://hub.docker.com/r/anshikagpt27/youtube-chatbot-backend
 
 ```bash
-docker compose up --build
+docker pull anshikagpt27/youtube-chatbot-backend
+docker pull anshikagpt27/youtube-chatbot-frontend
+```
+
+Run them with:
+
+```bash
+docker run -d --name youtube-chatbot-backend -p 8000:8000 --env-file .env anshikagpt27/youtube-chatbot-backend
+docker run -d --name youtube-chatbot-frontend -p 8501:8501 -e BACKEND_URL=http://host.docker.internal:8000 anshikagpt27/youtube-chatbot-frontend
 ```
 
 Then open:
 - Frontend: http://localhost:8501
 - Backend: http://localhost:8000
 
-### 4. Run locally without Docker
+### 4. Start the app with local Docker Compose
+
+```bash
+docker compose up --build
+```
+
+### 5. Run locally without Docker
 
 Backend:
 
