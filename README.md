@@ -8,10 +8,7 @@ This project combines:
 - Google Gemini via LangChain
 - YouTube transcript fetching via `youtube-transcript-api`
 - Docker Compose for simple local deployment
-
-## Demo
-
-<img width="1920" height="1080" alt="Screenshot" src="https://github.com/user-attachments/assets/9e9a62a1-a14f-4f16-8936-338a3a94bc70" />
+  
 
 ## Features
 
